@@ -27,13 +27,14 @@ if __name__ == "__main__":
         all_versions = []
 
         # Read all entries and find directories
+        named_versions = ['latest', 'stable']
         for entry in os.listdir(directory):
-            if os.path.isdir(os.path.join(directory, entry)):
+            if (entry in named_versions or StrictVersion.version_re.match(entry)) and os.path.isdir(os.path.join(directory, entry)):
                 all_versions.append(entry)
         
         # Exclude non strict version name and append them to the final list of verions
         versions = []
-        for version in ['latest', 'stable']:
+        for version in named_versions:
             if version in all_versions:
                 versions.append(version)
                 all_versions.remove(version)
