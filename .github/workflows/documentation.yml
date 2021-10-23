@@ -48,6 +48,7 @@ jobs:
       with:
         repository: "Fastwf/Fastwf.github.io"
         path: .github-page
+        token: ${{ secrets.SITE_GITHUB_TOKEN }}
     - name: Update GitHub page repository
       run: |
         mkdir -p ".github-page/${GITHUB_REF##*/}"
