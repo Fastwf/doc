@@ -50,6 +50,7 @@ jobs:
         path: .github-page
     - name: Update GitHub page repository
       run: |
+        mkdir -p ".github-page/${GITHUB_REF##*/}"
         mv -t ".github-page/${GITHUB_REF##*/}" docs/build/*
         mv -t ".github-page/${GITHUB_REF##*/}/api-doc" api/api-doc/*
         echo '{"version":"'${GITHUB_REF##*/}'"}' > ".github-page/${GITHUB_REF##*/}/version.json"
