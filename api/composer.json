@@ -1,0 +1,34 @@
+{
+    "name": "fastwf/doc",
+    "type": "library",
+    "authors": [
+        {
+            "name": "David BELBEZE",
+            "email": "david.belbeze@gmail.com"
+        }
+    ],
+    "require": {
+        "fastwf/core": "dev-main",
+        "fastwf/asset": "dev-main",
+        "fastwf/devtool": "dev-main",
+        "fastwf/twig": "dev-main"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Fastwf/core"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/Fastwf/asset"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/Fastwf/twig"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/Fastwf/devtool"
+        }
+    ]
+}

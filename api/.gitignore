@@ -1,0 +1,9 @@
+# Composer
+vendor/
+# Don't commit lock file to download the latest version
+composer.lock
+
+# Build
+.phpdoc/
+api-doc/
+
