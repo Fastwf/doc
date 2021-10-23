@@ -59,7 +59,10 @@ jobs:
       run: |
         git config user.name "GitHub action"
         git config user.email "github-actions@github.com"
-        git add .
-        git status
-        git commit -m "Update the documentation for '${GITHUB_REF##*/}'"
+        if [ $(git status --porcelain | wc -l) -ne 0 ]
+        then
+          git add .
+          git commit -m "Update the documentation for '${GITHUB_REF##*/}'"
+          git push
+        fi
       working-directory: .github-page
