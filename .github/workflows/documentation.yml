@@ -11,8 +11,6 @@ jobs:
   build-documentation:
     runs-on: ubuntu-latest
     steps:
-    - name: Debug reference
-      run: echo "running on '${GITHUB_REF##*/}'"
     # Prepare the workspace
     - name: Clone the repository
       uses: actions/checkout@v2
@@ -48,7 +46,7 @@ jobs:
     - name: Clone GitHub page repository
       uses: actions/checkout@v2
       with:
-        repository: "https://github.com/Fastwf/Fastwf.github.io"
+        repository: "Fastwf/Fastwf.github.io"
         path: .github-page
     - name: Update GitHub page repository
       run: |
