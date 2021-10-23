@@ -52,7 +52,7 @@ jobs:
       run: |
         mkdir -p ".github-page/${GITHUB_REF##*/}"
         cp -R -t ".github-page/${GITHUB_REF##*/}" docs/build/*
-        cp -R -t ".github-page/${GITHUB_REF##*/}/api-doc" api/api-doc/*
+        cp -R -t ".github-page/${GITHUB_REF##*/}" api/api-doc
         echo '{"version":"'${GITHUB_REF##*/}'"}' > ".github-page/${GITHUB_REF##*/}/version.json"
         python make_version.py ".github-page/" ".github-page/versions.json"
     - name: Commit changes
