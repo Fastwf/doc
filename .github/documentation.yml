@@ -1,0 +1,42 @@
+name: Build documentation
+on:
+  push:
+    branches:
+    - stable
+    - latest
+  create:
+    tags:
+    - '*'
+jobs:
+  build-documentation:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Debug reference
+      run: echo "running on '${GITHUB_REF##*/}'"
+    # Prepare the workspace
+    - name: Clone the repository
+      uses: actions/checkout@v2
+    # Make api documentation
+    - name: Install dependencies (api)
+      run: make install
+      working-directory: api
+    - name: Generate doc (api)
+      run: make doc
+      working-directory: api
+    - name: Upload api doc
+      uses: actions/upload-artifact@v2
+      with:
+        name: api-doc
+        path: api/api-doc
+    # Make documentation
+    - name: Install dependencies (docs)
+      run: make image
+      working-directory: docs
+    - name: Generate doc (docs)
+      run: make doc
+      working-directory: docs
+    - name: Upload documentation
+      uses: actions/upload-artifact@v2
+      with:
+        name: documentation
+        path: docs/build
