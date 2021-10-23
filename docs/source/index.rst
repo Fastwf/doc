@@ -10,6 +10,8 @@ Welcome to Fast Web Framework's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   getting-started
+
 
 API Documentation
 =================
