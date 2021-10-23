@@ -1,0 +1,11 @@
+{% extends "!layout.html" %}
+
+{%- block extrahead %}
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+{% endblock %}
+
+{% block footer %}
+    {{ super() }}
+    <script src="_static/js/version.js"></script>
+{% endblock %}

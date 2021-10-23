@@ -1,0 +1,19 @@
+<div id="vjs-version" class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Version">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book">&nbsp;Read the Docs</span>
+    v: (( currentVersion ))
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      <dd v-for="version in versions" v-if="version !== currentVersion">
+        <a v-bind:href="'../' + version + '/'">(( version ))</a>
+      </dd>
+    </dl>
+    <dl>
+      <dt>Contributing</dt>
+      <dd><a href="https://github.com/Fastwf" target="_blank">GitHub</a></dd>
+    </dl>
+  </div>
+</div>
