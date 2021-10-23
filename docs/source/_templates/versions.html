@@ -5,7 +5,7 @@
     <span class="fa fa-caret-down"></span>
   </span>
   <div class="rst-other-versions">
-    <dl>
+    <dl v-if="versions.length > 1">
       <dt>Versions</dt>
       <dd v-for="version in versions" v-if="version !== currentVersion">
         <a v-bind:href="'../' + version + '/'">(( version ))</a>

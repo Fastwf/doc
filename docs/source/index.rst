@@ -11,6 +11,11 @@ Welcome to Fast Web Framework's documentation!
    :caption: Contents:
 
 
+API Documentation
+=================
+
+Access to `documentation <./api-doc/>`_.
+
 
 Indices and tables
 ==================
