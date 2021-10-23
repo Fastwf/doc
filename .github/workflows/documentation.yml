@@ -16,6 +16,10 @@ jobs:
     # Prepare the workspace
     - name: Clone the repository
       uses: actions/checkout@v2
+    - name: setup python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
     # Make api documentation
     - name: Install dependencies (api)
       run: make install
@@ -40,3 +44,22 @@ jobs:
       with:
         name: documentation
         path: docs/build
+    # Make version folder
+    - name: Clone GitHub page repository
+      uses: actions/checkout@v2
+        repository: https://github.com/Fastwf/Fastwf.github.io
+        path: .github-page
+    - name: Update GitHub page repository
+      run: |
+        mv -t ".github-page/${GITHUB_REF##*/}" docs/build/*
+        mv -t ".github-page/${GITHUB_REF##*/}/api-doc" api/api-doc/*
+        echo '{"version":"'${GITHUB_REF##*/}'"}' > ".github-page/${GITHUB_REF##*/}/version.json"
+        python make_version.py ".github-page/" ".github-page/versions.json"
+    - name: Commit changes
+      run: |
+        git config user.name "GitHub action"
+        git config user.email "github-actions@github.com"
+        git add .
+        git status
+        git commit -m "Update the documentation for '${GITHUB_REF##*/}'"
+      working-directory: .github-page
