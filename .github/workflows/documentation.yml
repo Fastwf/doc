@@ -47,7 +47,8 @@ jobs:
     # Make version folder
     - name: Clone GitHub page repository
       uses: actions/checkout@v2
-        repository: https://github.com/Fastwf/Fastwf.github.io
+      with:
+        repository: "https://github.com/Fastwf/Fastwf.github.io"
         path: .github-page
     - name: Update GitHub page repository
       run: |
