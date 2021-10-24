@@ -14,15 +14,18 @@ var appVersion = new Vue({
       this.versions = data.versions;
     },
   },
-  created: function () {
-      // Call the server to obtain the version and others
-      Promise.all([
-        axios.get('version.json'),
-        axios.get('../versions.json'),
-      ]).then((datas) => {
-        this.onVersion(datas[0].data);
-        this.onVersions(datas[1].data);
-      });
+  mounted: function () {
+    var versionPath = this.$el.dataset.versionUrl;
+    var versionsPath = this.$el.dataset.versionsUrl;
+
+    // Call the server to obtain the version and others
+    Promise.all([
+      axios.get(versionPath),
+      axios.get(versionsPath),
+    ]).then((datas) => {
+      this.onVersion(datas[0].data);
+      this.onVersions(datas[1].data);
+    });
   },
   delimiters: ['((', '))']
 });

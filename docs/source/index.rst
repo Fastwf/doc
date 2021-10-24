@@ -3,21 +3,20 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Fast Web Framework's documentation!
-==============================================
+Fast Web Framework
+==================
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Documentation
 
-   getting-started
-
+   introduction
+   overview/index
 
 API Documentation
 =================
 
-Access to `documentation <./api-doc/>`_.
-
+Access to `api documentation <./api-doc/>`_.
 
 Indices and tables
 ==================

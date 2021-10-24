@@ -1,8 +1,9 @@
+###############
 Getting started
-===============
+###############
 
 Installation
-------------
+============
 
 After project initialisation using composer, update the ``composer.json`` file to add the Fast Web Framework git repository.
 
@@ -43,14 +44,14 @@ Install the ``fastwf/core`` package:
     > Generating autoload files
 
 Initialisation
---------------
+==============
 
 The minimum required to create and run an application it is to create 2 files :
 - Application engine
 - index.php
 
 Application Engine
-^^^^^^^^^^^^^^^^^^
+------------------
 
 The application engine must be extended to define the application settings.
 
@@ -80,7 +81,7 @@ So start by creating the application engine ``src/AppEngine.php``.
     }
 
 Index.php
-^^^^^^^^^
+---------
 
 Fast Web Framework allows to define a unique file that will be exposed by the web server.
 
@@ -99,7 +100,7 @@ Continue and create the script entry point that run the application engine ``pub
     $app->run();
 
 Settings
---------
+========
 
 To define the required behaviour for your application, one or more setting class must be
 implemented using settings interfaces (``Fastwf\Core\Settings`` namespace).
@@ -110,6 +111,8 @@ implemented using settings interfaces (``Fastwf\Core\Settings`` namespace).
 One of these settings is the ``RouteSettings`` and it allows to add request handlers for routes.
 
 Create the ``RootSettings`` class to add the first request handler in ``src/RootSettings.php``.
+
+.. _getting_started_settings:
 
 .. code-block:: php
 
@@ -189,7 +192,7 @@ To finish, the ``RootSettings`` class can be injected in the ``AppEngine``.
     }
 
 Test the application
---------------------
+====================
 
 Now the application is ready to be used.
 
