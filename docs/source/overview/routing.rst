@@ -105,12 +105,16 @@ Route
 
 The ``Route`` class require an array parameter which respect the ``BaseRoute`` keys and the next additionnal keys:
 
-+-------------+------------+---------------------------------------------------------+
-| Property    | Required   | Description                                             |
-+=============+============+=========================================================+
-| ``methods`` | yes        | An array of http methods ``["GET", "POST"]``            |
-+-------------+------------+---------------------------------------------------------+
-| ``handler`` | yes        | A function factory or an instance of ``RequestHandler`` |
-+-------------+------------+---------------------------------------------------------+
++-------------+------------+-----------------------------------------------------------------------+
+| Property    | Required   | Description                                                           |
++=============+============+=======================================================================+
+| ``methods`` | yes        | An array of http methods ``["GET", "POST"]``                          |
++-------------+------------+-----------------------------------------------------------------------+
+| ``handler`` | yes        | A function factory, an instance of ``RequestHandler`` or a class name |
++-------------+------------+-----------------------------------------------------------------------+
 
 See :ref:`getting started RootSettings example<getting_started_settings>` for ``Route`` usage.
+
+.. note::
+
+    Use factory function when the constructor signature of the request handler is redefined. 

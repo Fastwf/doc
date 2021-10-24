@@ -135,7 +135,7 @@ Create the ``RootSettings`` class to add the first request handler in ``src/Root
                 new Route([
                     'path' => '',
                     'methods' => ['GET'],
-                    'handler' => function ($context) { return new HelloWorldHandler($context); },
+                    'handler' => HelloWorldHandler::class,
                     'name' => 'hello-world'
                 ])
             ];
