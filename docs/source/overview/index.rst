@@ -9,3 +9,4 @@ Overview
     getting-started
     life-cycle
     routing
+    services

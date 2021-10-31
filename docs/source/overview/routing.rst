@@ -118,3 +118,30 @@ See :ref:`getting started RootSettings example<getting_started_settings>` for ``
 .. note::
 
     Use factory function when the constructor signature of the request handler is redefined. 
+
+Router service
+==============
+
+The ``RouterService`` is responsible of route management and it's accessible from the engine context.
+
+For common application development, this service is used to generate the url using route name.
+
+.. code-block:: php
+
+    <?php
+
+    namespace Author\App;
+
+    // use ...
+
+    class CustomHandler extends RequestHandler {
+
+        public function handle($request) {
+            $url = $this->context->getService(RouterService::class)
+                ->urlFor('route_name');
+            
+            // Perform operations with $url and return the HttpStreamResponse
+            // ...
+        }
+
+    }
